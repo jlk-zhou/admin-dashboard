@@ -1,0 +1,159 @@
+body {
+    display: grid; 
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 170px 1fr; 
+    margin: 0px; 
+}
+
+.sidebar {
+    background-color: rgb(0, 113, 206);
+    grid-column: 1; 
+    grid-row: 1 / -1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .title {
+    display: flex; 
+    align-items: center;
+    justify-content: left;
+    gap: 8px; 
+    padding-left: 20px; 
+}
+
+.sidebar .title img {
+    width: 50px; 
+    height: 50px; 
+    color: white; 
+    filter: invert(1);
+}
+
+.sidebar .title p {
+    font-size: 1.5em;
+    font-weight: 600; 
+    color: white; 
+}
+
+.sidebar li {
+    display: flex; 
+    font-size: 1.1em; 
+    font-weight: 600;
+    align-items: center;
+    gap: 26px; 
+    height: 42px; 
+    padding-left: 30px;
+}
+
+.sidebar li:hover {
+    background-color: rgb(62, 142, 207); 
+    cursor: pointer; 
+}
+
+/* Sidebar Options Icons */
+.sidebar li img {
+    width: 25px; 
+    height: 25px; 
+    filter: invert(1);
+}
+
+.sidebar ul {
+    list-style: none; 
+    color: white; 
+    padding-left: 0px; 
+}
+
+.header .top {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.header .top .icon {
+    width: 25px; 
+    height: 25px; 
+}
+
+.header .top .avatar {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+.header .top input {
+    height: 30px; 
+    width: 300px; 
+}
+
+.header .bottom {
+    display: grid; 
+    grid-template-columns: 400px 1fr;
+}
+
+.user-greet {
+    display: grid; 
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 30px 1fr; 
+}
+
+.user-greet .img {
+    grid-column: 1;
+    grid-row: 1 / -1; 
+}
+
+.post-options {
+    display: flex; 
+}
+
+.content {
+    display: grid; 
+    grid-template-columns: 1fr 200px; 
+    grid-template-rows: 1fr 1fr; 
+    background-color: rgb(215, 215, 215);
+}
+
+.projects {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    display: grid; 
+    grid-template-rows: 30px 1fr;
+}
+
+.announcements {
+    grid-row: 1; 
+}
+
+.trending {
+    grid-row: 2; 
+}
+
+.projects p {
+    grid-column: 1 / -1;
+    grid-row: 1; 
+}
+
+.cards {
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, minmax(200px, 1fr));
+}
+
+.announcements {
+    display: grid; 
+    grid-template-rows: 30px 1fr; 
+}
+
+.announcements .content {
+    display: flex; 
+    flex-direction: column;
+}
+
+.trending {
+    display: grid; 
+    grid-template-rows: 30px 1fr;
+}
+
+.trending .content {
+    display: flex; 
+    flex-direction: column;
+}
