@@ -3,6 +3,7 @@ body {
     grid-template-columns: 300px 1fr;
     grid-template-rows: 170px 1fr; 
     margin: 0px; 
+    box-sizing: border-box;
 }
 
 .sidebar {
@@ -63,14 +64,18 @@ body {
 }
 
 .header .top {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr repeat(3, auto);
     align-items: center; 
-    justify-content: space-between;
+    margin: 10px 0px; 
+    padding-right: 60px; 
 }
 
 .header .top .icon {
     width: 25px; 
     height: 25px; 
+    margin-left: 60px; 
+    margin-right: 30px; 
 }
 
 .header .top .avatar {
@@ -78,31 +83,88 @@ body {
     height: 50px;
     border-radius: 50%; 
     object-fit: cover;
+    margin: 0px 10px; 
+}
+
+.header .top p {
+    font-size: 1.1em;
+    font-weight: 600; 
 }
 
 .header .top input {
     height: 30px; 
-    width: 300px; 
+    width: 70%; 
+    border-radius: 20px; 
+    padding-left: 15px; 
+    background-color: rgb(215, 215, 215);
+    border: none; 
+}
+
+.header .top input:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.header .top input:focus {
+    outline: none; 
 }
 
 .header .bottom {
     display: grid; 
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 1fr auto;
 }
 
 .user-greet {
     display: grid; 
     grid-template-columns: 100px 1fr;
-    grid-template-rows: 30px 1fr; 
+    grid-template-rows: 25px 1fr; 
+    align-items: center; 
+    padding-left: 60px; 
 }
 
-.user-greet .img {
+.user-greet img {
+    width: 70px; 
+    height: 70px; 
+    border-radius: 50px;
     grid-column: 1;
     grid-row: 1 / -1; 
 }
 
+.user-greet p:nth-child(2) {
+    font-size: 0.8em;
+    align-self: end; 
+}
+
+.user-greet p:last-child {
+    font-size: 1.6em; 
+}
+
+.user-greet p {
+    margin: 0px; 
+    font-weight: 600;
+}
+
 .post-options {
-    display: flex; 
+    display: grid; 
+    justify-items: center;
+    align-items: end;
+    grid-template-columns: repeat(3, 150px);
+    padding-right: 60px; 
+}
+
+.post-options button {
+    width: 100px; 
+    height: 38px; 
+    border-radius: 20px;
+    margin-bottom: 10px; 
+    border: none; 
+    background-color: rgb(0, 140, 255);
+    color: white; 
+    font-weight: 600;
+}
+
+.post-options button:hover {
+    cursor: pointer; 
+    background-color: rgb(20, 157, 255);
 }
 
 .content {
