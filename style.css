@@ -13,6 +13,10 @@ body {
     grid-row: 1 / -1; 
     display: flex;
     flex-direction: column;
+    height: 100vh; 
+    position: sticky; 
+    top: 0; 
+    align-self: start; 
 }
 
 .sidebar .title {
@@ -190,10 +194,6 @@ body {
     grid-template-rows: 30px 1fr;
 }
 
-.trending {
-    grid-row: 2; 
-}
-
 .projects p {
     grid-column: 1 / -1;
     grid-row: 1; 
@@ -227,6 +227,7 @@ body {
 }
 
 .announcement:hover {
+    cursor: pointer; 
     background-color: rgb(230, 230, 230);
 }
 
@@ -254,6 +255,7 @@ body {
 }
 
 .trending {
+    grid-row: 2; 
     display: grid; 
     grid-template-rows: 30px 1fr;
 }
