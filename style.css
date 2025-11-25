@@ -205,17 +205,21 @@ body {
     grid-template-rows: repeat(3, minmax(200px, 1fr));
 }
 
-.announcements {
+/* Whatever content on the side, either announcements or trending */
+.side-area {
     display: grid; 
-    grid-template-rows: 50px min-content; 
+    grid-template-rows: repeat(2, min-content); 
     grid-row: 1; 
 }
 
-.announcements > p {
+/* The title of each side area */
+.side-area > p {
+    margin-bottom: 10px; 
     font-weight: 600;
 }
 
-.announcements .content {
+/* The actual content pannel of the side area */
+.side-panel {
     display: grid; 
     background-color: white; 
     grid-template-columns: 1fr;
@@ -226,41 +230,79 @@ body {
     gap: 0px; 
 }
 
-.announcement:hover {
+/* What's inside each announcement or trending */
+.side-section .text {
+    margin: 20px; 
+}
+
+/* Hover effect of each side section */
+.side-section:hover {
     cursor: pointer; 
     background-color: rgb(230, 230, 230);
 }
 
-.announcement .text {
-    margin: 20px; 
-}
-
-.announcement p {
+/* Reset margin for the texts */
+.side-section p {
     margin: 0px; 
 }
 
-.announcement p:first-child {
+/* Title of each announcement or trending post */
+.side-section p:first-child {
     font-size: 0.9em; 
     font-weight: 600; 
     margin-bottom: 5px;
 }
 
-.announcement p:last-child {
+/* Content of each post */
+.side-section p:last-child {
     font-size: 0.8em; 
     color: rgb(96, 96, 96); 
 }
 
-.announcement:not(:last-child) {
-    border-bottom: 1px solid rgb(170, 169, 169); 
+/* Adds separation line between posts */
+.announcement.side-section:not(:last-child) {
+    position: relative; 
+}
+
+.announcement.side-section:not(:last-child)::after {
+    content: ""; 
+    position: absolute; 
+    bottom: 0; 
+    left: 20px; 
+    width: 80%; 
+    height: 1px; 
+    background-color: rgb(214, 214, 214);
 }
 
 .trending {
     grid-row: 2; 
-    display: grid; 
-    grid-template-rows: 30px 1fr;
 }
 
-.trending .content {
-    display: flex; 
-    flex-direction: column;
+.trending-user .text{
+    display: grid; 
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 35px 35px;
+    gap: 8px;
+    margin: 10px 0px 10px 15px; 
+}
+
+.trending-user img {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    grid-column: 1;
+    grid-row: 1 / -1; 
+    place-self: center; 
+}
+
+.trending-user p:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1; 
+    align-self: end; 
+    font-size: 0.95em
+}
+
+.trending-user p:last-child {
+    grid-column: 2;
+    grid-row: 2; 
 }
